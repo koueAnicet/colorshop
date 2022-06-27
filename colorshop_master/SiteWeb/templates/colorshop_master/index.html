@@ -2,30 +2,35 @@
 {% load static %}
 
 {% block 'main' %}
+<!-- Slider -->
+
+<div class="main_slider" style="background-image:url({{banners.image_banner}})">
+    <div class="container fill_height">
+        <div class="row align-items-center fill_height">
+            <div class="col">
+                <div class="main_slider_content">
+                    <h6>{{banners.title_banner}}/ {{banners.annee_banner}}</h6>
+                    <h1>{{banners.description_banner}}</h1>
+                    <div class="red_button shop_now_button"><a href="#">shop now</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner -->
 <div class="banner">
 	<div class="container">
 		<div class="row">
+			{% for categorie in categories %}
 			<div class="col-md-4">
-				<div class="banner_item align-items-center" style="background-image:url({% static 'colorshop_master/images/banner_1.jpg' %})">
+				<div class="banner_item align-items-center" style="background-image:url({{ categorie.image_cat.url }})">
 					<div class="banner_category">
-						<a href="categories.html">women's</a>
+						<a href="{% url 'categories' categorie.id %}">{{ categorie.nom_cat|upper}}</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="banner_item align-items-center" style="background-image:url({% static 'colorshop_master/images/banner_2.jpg' %})">
-					<div class="banner_category">
-						<a href="categories.html">accessories's</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="banner_item align-items-center" style="background-image:url({% static 'colorshop_master/images/banner_3.jpg' %})">
-					<div class="banner_category">
-						<a href="categories.html">men's</a>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
+		
 		</div>
 	</div>
 </div>
@@ -520,7 +525,7 @@
 
 <!-- Blogs -->
 
-<div class="blogs">
+<div class="blogs" id="blog">
 	<div class="container">
 		<div class="row">
 			<div class="col text-center">

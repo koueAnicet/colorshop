@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'colorshop_master.context_processors.global_Site_info',#add  
             ],
         },
     },
@@ -121,7 +122,7 @@ STATIC_URL = 'static/'
 
 MEDIA_ROOT =os.path.join(BASE_DIR,"media") 
 
-MEDIA_URLS ='media/'
+MEDIA_URLS ='/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

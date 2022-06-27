@@ -95,7 +95,7 @@
                             <li><a href="#">promotion</a></li>
                             <li><a href="#">pages</a></li>
                             <li><a href="#">blog</a></li>
-                            <li><a href="contact.html">contact</a></li>
+                            <li><a href="{% url 'contact' %}">contact</a></li>
                         </ul>
                         <ul class="navbar_user">
                             <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -157,33 +157,19 @@
                     <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
                 </ul>
             </li>
-            <li class="menu_item"><a href="#">home</a></li>
+            <li class="menu_item"><a href="{% url 'index' %}">home</a></li>
             <li class="menu_item"><a href="#">shop</a></li>
             <li class="menu_item"><a href="#">promotion</a></li>
             <li class="menu_item"><a href="#">pages</a></li>
             <li class="menu_item"><a href="#">blog</a></li>
-            <li class="menu_item"><a href=" {% url 'contact' %}">contact</a></li>
+            <li class="menu_item"><a href="{% url 'contact' %}">contact</a></li>
         </ul>
     </div>
 </div>
 
-<!-- Slider -->
 
-<div class="main_slider" style="background-image:url({{banners.image_banner}})">
-    <div class="container fill_height">
-        <div class="row align-items-center fill_height">
-            <div class="col">
-                <div class="main_slider_content">
-                    <h6>{{banners.title_banner}}/ {{banners.annee_banner}}</h6>
-                    <h1>{{banners.description_banner}}</h1>
-                    <div class="red_button shop_now_button"><a href="#">shop now</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Banner -->
+
 
 {% block 'main' %}
 
@@ -221,7 +207,7 @@
                     <ul class="footer_nav">
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">FAQs</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a href="{% url 'contact' %}">Contact us</a></li>
                     </ul>
                 </div>
             </div>
