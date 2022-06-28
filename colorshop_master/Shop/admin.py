@@ -9,6 +9,6 @@ class CategorieAdmin(admin.ModelAdmin):
         return mark_safe(f'<img src="{obj.image_cat.url}" style="height:100px; width:200px">')
     
 admin.site.register(Reduction)
-admin.site.register(Etat)
+admin.site.register(Couleur)
 
-admin.site.register(Article)
+admin.site.register(Articles)

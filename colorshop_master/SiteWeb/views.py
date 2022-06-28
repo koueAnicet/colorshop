@@ -6,7 +6,6 @@ from Shop.models import *
 # Create your views here.
 def index(request):
     site = Site.objects.first()
-    banners = Banner.objects.first()
     categories = Categorie.objects.all().order_by(('nom_cat'))
     return render(request, 'colorshop_master/index.html', locals())
 

@@ -4,13 +4,13 @@
 {% block 'main' %}
 <!-- Slider -->
 
-<div class="main_slider" style="background-image:url({{banners.image_banner}})">
+<div class="main_slider" style="background-image:url()">
     <div class="container fill_height">
         <div class="row align-items-center fill_height">
             <div class="col">
                 <div class="main_slider_content">
-                    <h6>{{banners.title_banner}}/ {{banners.annee_banner}}</h6>
-                    <h1>{{banners.description_banner}}</h1>
+                    <h6><!--{{site.title_site}}--></h6>
+                    <h1><!--{{site.description_site}}--></h1>
                     <div class="red_button shop_now_button"><a href="#">shop now</a></div>
                 </div>
             </div>
@@ -51,9 +51,17 @@
 				<div class="new_arrivals_sorting">
 					<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
 						<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-						<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">women's</li>
-						<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li>
-						<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">men's</li>
+						{% for i in categories %}
+						
+						{% if i.nom_cat == "Women's" %}
+						<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">{{i.nom_cat}}</li>
+						{% elif i.nom_cat == "accessories"  %}
+						<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">{{i.nom_cat}}</li>
+						{% elif i.nom_cat == "Men's"  %}
+						<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">{{i.nom_cat}}</li>
+						
+						{% endif %}
+						{% endfor %}
 					</ul>
 				</div>
 			</div>

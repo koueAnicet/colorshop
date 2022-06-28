@@ -5,7 +5,7 @@ from SiteWeb.models import*
 
 admin.site.register(Site)
 admin.site.register(ReseauSocial)
-admin.site.register(Banner)
+
 
 admin.site.register(NewsLetter)
-admin.site.register(Contact)
+admin.site.register(TrueContacted)

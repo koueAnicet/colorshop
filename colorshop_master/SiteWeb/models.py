@@ -10,29 +10,25 @@ class ReseauSocial(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_deleted = models.BooleanField(default=False)
-
     def __str__(self):
         return self.nom_reseau
 
 class Site(models.Model):
     nom_site = models.CharField(max_length=50)
+    image_site = models.FileField()
+    title_site = models.CharField(max_length=50)
+    description_site = models.TextField()
     reseau_social_site = models.ForeignKey(ReseauSocial, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.nom_site
-
-class Banner(models.Model):
-    image_banner = models.FileField()
-    title_banner = models.CharField(max_length=50)
-    annee_banner =models.IntegerField()
-    description_banner = models.TextField()
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    is_deleted = models.BooleanField(default=False)
+    is_deleted = models.BooleanField(default=False) 
     def __str__(self):
-        return self.title_banner
+        return self.title_site
 
-class Contact(models.Model):
+
+
+class TrueContacted(models.Model):
     nom_contact = models.CharField(max_length=50)
     email_contact = models.EmailField(max_length=100)
     website_contact = models.CharField(max_length=100)
