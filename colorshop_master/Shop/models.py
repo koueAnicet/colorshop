@@ -49,10 +49,10 @@ class Articles(models.Model):
     
     NOUVEAU = 'News'
     ANCIEN = 'Sale'
-    NULL = ''
+    NUL = ''
     
     ETAT_ARTICLE =(
-        (NULL,""),
+        (NUL,""),
         (NOUVEAU,"news"),
         (ANCIEN,'sale')
     )
