@@ -18,7 +18,7 @@ class Site(models.Model):
     image_site = models.FileField()
     title_site = models.CharField(max_length=50)
     description_site = models.TextField()
-    reseau_social_site = models.ForeignKey(ReseauSocial, on_delete=models.CASCADE)
+    reseau_social_site = models.ForeignKey(ReseauSocial, on_delete=models.CASCADE, related_name="reseau_social")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

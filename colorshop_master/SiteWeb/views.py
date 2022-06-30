@@ -7,6 +7,7 @@ from Shop.models import *
 def index(request):
     site = Site.objects.first()
     categories = Categorie.objects.all().order_by(('nom_cat'))
+    articles = Articles.objects.all()
     return render(request,'colorshop_master/index.html', locals())
 
 def contact(request):
