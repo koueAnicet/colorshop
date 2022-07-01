@@ -34,6 +34,18 @@ class Couleur(models.Model):
     def __str__(self):
         return self.nom_couleur
 
+
+class CategorieImages(models.Model):
+    cat_image1 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image1")
+    cat_image2 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image2")
+    cat_image3 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image3")
+    cat_image4 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image4")
+    cat_image5 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image5")
+    cat_image6 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image6")
+    def __str__(self):
+        return str(self.cat_image1)
+
+
 class Articles(models.Model):
 
     CFA = 'XOF'
@@ -69,6 +81,7 @@ class Articles(models.Model):
         (TRES_GRAND,'tres_grand'),
     ]  
     image = models.FileField()
+    autre_image_article = models.ForeignKey(CategorieImages, on_delete=models.CASCADE,  related_name="articles_images")
     nom = models.CharField(max_length=100)
     description = models.TextField()
     prix = models.IntegerField()
@@ -81,7 +94,7 @@ class Articles(models.Model):
     couleur = models.ForeignKey(Couleur, on_delete=models.CASCADE, default=False)
     taille = models.CharField(choices=TAILLE, max_length=255,default=None, blank=True, null=True)  
     collections = models.CharField(max_length=100, default=None, blank=True, null=True)
-    categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE)
+    categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE, related_name="nom_cate")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

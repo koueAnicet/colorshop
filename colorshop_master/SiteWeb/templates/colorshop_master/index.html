@@ -4,13 +4,13 @@
 {% block 'main' %}
 <!-- Slider -->
 
-<div class="main_slider" style="background-image:url()">
+<div class="main_slider" style="background-image:url({{ site.image_site.url }})">
     <div class="container fill_height">
         <div class="row align-items-center fill_height">
             <div class="col">
                 <div class="main_slider_content">
-                    <h6>{{site.title_site}}</h6>
-                    <h1>{{site.description_site}}</h1>
+                    <h6>{{ site.title_site }}</h6>
+                    <h1>{{ site.description_site }}</h1>
                     <div class="red_button shop_now_button"><a href="#">shop now</a></div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
 
 					<!-- Product 1 -->
 					{% for article in articles %}
-					<div class="product-item {% if cat.nom_cat %} {{cat.nom_cat}} {% endif %}">
+					<div class="product-item  {{cat.nom_cat}} ">
 						<div class="product discount product_filter">
 							<div class="product_image">
 								<img src="{{ article.image.url }}" alt="">
@@ -89,7 +89,7 @@
 							{% endif %}
 							<div class="product_info">
   
-								<h6 class="product_name"><a href="{% url 'Single' single.id  %}">{{ article.description }}</a></h6>
+								<h6 class="product_name"><a href="{% url 'Single' article.id  %}">{{ article.nom }}</a></h6>
 								<div class="product_price">{% if article.valeur_reduction %} {{ article.currencies}} {{ article.prix }} {% endif %}<span>{{article.currencies}}{{article.prix}}</span></div>
 							</div>
 						</div>

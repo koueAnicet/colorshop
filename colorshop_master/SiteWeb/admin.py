@@ -8,4 +8,4 @@ admin.site.register(ReseauSocial)
 
 
 admin.site.register(NewsLetter)
-admin.site.register(TrueContacted)
+admin.site.register(Contacted)

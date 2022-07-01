@@ -18,6 +18,8 @@ class Site(models.Model):
     image_site = models.FileField()
     title_site = models.CharField(max_length=50)
     description_site = models.TextField()
+    phone = models.CharField(max_length=15)
+    email = models.EmailField(max_length=100)
     reseau_social_site = models.ForeignKey(ReseauSocial, on_delete=models.CASCADE, related_name="reseau_social")
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -28,10 +30,10 @@ class Site(models.Model):
 
 
 
-class TrueContacted(models.Model):
+class Contacted(models.Model):
     nom_contact = models.CharField(max_length=50)
     email_contact = models.EmailField(max_length=100)
-    website_contact = models.CharField(max_length=100)
+    website_contact = models.URLField(max_length=255)
     message_contact = models.TextField()
 
     created_at = models.DateTimeField(auto_now_add=True)

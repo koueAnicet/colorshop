@@ -181,7 +181,7 @@
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
 						<li><a href="{% url 'index' %}">Home</a></li>
-						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>{{ categorie_ids}}</a></li>
+						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>{{ categorie_ids }}</a></li>
 					</ul>
 				</div>
 
@@ -310,11 +310,11 @@
 								<div class="product-grid">
 
 									<!-- Product 1 -->
-
+									{% for categ in categorie %}
 									<div class="product-item men">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="{% static 'colorshop_master/images/product_1.png' %}" alt="">
+												<img src="{{ categ.}}" alt="">
 											</div>
 											<div class="favorite favorite_left"></div>
 											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
@@ -325,8 +325,8 @@
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 									</div>
-
-									<!-- Product 2 -->
+									{% endfor %}
+									<!-- Product 2 --><!--
 
 									<div class="product-item women">
 										<div class="product product_filter">
@@ -341,9 +341,9 @@
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+									</div>-->
 
-									<!-- Product 3 -->
+									<!-- Product 3 --><!--
 
 									<div class="product-item women">
 										<div class="product product_filter">
@@ -357,9 +357,9 @@
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+									</div>-->
 
-									<!-- Product 4 -->
+									<!-- Product 4 --><!--
 
 									<div class="product-item accessories">
 										<div class="product product_filter">
@@ -374,9 +374,9 @@
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+									</div>-->
 
-									<!-- Product 5 -->
+									<!-- Product 5 --><!--
 
 									<div class="product-item women men">
 										<div class="product product_filter">
@@ -392,7 +392,7 @@
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 									</div>
 
-									<!-- Product 6 -->
+									<!-- Product 6 --><!--
 
 									<div class="product-item accessories">
 										<div class="product discount product_filter">
@@ -407,9 +407,9 @@
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+									</div>-->
 
-									<!-- Product 7 -->
+									<!-- Product 7 --><!--
 
 									<div class="product-item women">
 										<div class="product product_filter">
@@ -423,9 +423,9 @@
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+									</div>-->
 
-									<!-- Product 8 -->
+									<!-- Product 8 --><!--
 
 									<div class="product-item accessories">
 										<div class="product product_filter">
@@ -439,9 +439,9 @@
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+									</div>-->
 
-									<!-- Product 9 -->
+									<!-- Product 9 --><!--
 
 									<div class="product-item men">
 										<div class="product product_filter">
@@ -456,9 +456,9 @@
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+									</div>-->
 
-									<!-- Product 10 -->
+									<!-- Product 10 --><!--
 
 									<div class="product-item men">
 										<div class="product product_filter">
@@ -472,9 +472,9 @@
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+									</div>-->
 
-									<!-- Product 11 -->
+									<!-- Product 11 --><!--
 
 									<div class="product-item women men">
 										<div class="product product_filter">
@@ -488,9 +488,9 @@
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+									</div>-->
 
-									<!-- Product 12 -->
+									<!-- Product 12 --><!--
 
 									<div class="product-item accessories">
 										<div class="product discount product_filter">
@@ -505,7 +505,7 @@
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+									</div>-->
 								</div>
 
 								<!-- Product Sorting -->
@@ -624,7 +624,7 @@
 						<ul class="footer_nav">
 							<li><a href="#">Blog</a></li>
 							<li><a href="#">FAQs</a></li>
-							<li><a href="contact.html">Contact us</a></li>
+							<li><a href="{% url 'contact' %}">Contact us</a></li>
 						</ul>
 					</div>
 				</div>

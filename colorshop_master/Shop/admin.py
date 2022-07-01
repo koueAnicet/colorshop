@@ -12,3 +12,4 @@ admin.site.register(Reduction)
 admin.site.register(Couleur)
 
 admin.site.register(Articles)
+admin.site.register(CategorieImages)
