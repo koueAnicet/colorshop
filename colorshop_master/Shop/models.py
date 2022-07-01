@@ -47,13 +47,13 @@ class Articles(models.Model):
         (DOLLAR,'dollar')
     ]
     
-    NOUVEAU = 'News'
+    NOUVEAU = 'New'
     ANCIEN = 'Sale'
     NUL = ''
     
     ETAT_ARTICLE =(
         (NUL,""),
-        (NOUVEAU,"news"),
+        (NOUVEAU,"new"),
         (ANCIEN,'sale')
     )
     TRES_PETIT='S'

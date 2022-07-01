@@ -8,8 +8,14 @@ def global_Site_info(request):
     #    "site_info": site,
     }   
 
-def global_article(request):
+def global_categorie(request):
     categorie = Categorie.objects.all()
     return {
         "categorie": categorie,
+    }   
+
+def global_article(request):
+    single = Articles.objects.all()
+    return {
+        "categorie": single,
     }   

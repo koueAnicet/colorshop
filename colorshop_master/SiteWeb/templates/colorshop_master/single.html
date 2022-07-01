@@ -161,12 +161,12 @@
 						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
 					</ul>
 				</li>
-				<li class="menu_item"><a href="#">home</a></li>
+				<li class="menu_item"><a href="{% url 'index' %}">home</a></li>
 				<li class="menu_item"><a href="#">shop</a></li>
 				<li class="menu_item"><a href="#">promotion</a></li>
 				<li class="menu_item"><a href="#">pages</a></li>
 				<li class="menu_item"><a href="#">blog</a></li>
-				<li class="menu_item"><a href="#">contact</a></li>
+				<li class="menu_item"><a href="{% url 'contact' %}">contact</a></li>
 			</ul>
 		</div>
 	</div>
@@ -179,8 +179,8 @@
 
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="categories.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
+						<li><a href="{% url 'index' %}">Home</a></li>
+						<li><a href="{% url 'categorie' categorie.id %}"><i class="fa fa-angle-right" aria-hidden="true"></i>{{ categorie.categorie.nom_cat}}</a></li>
 						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Single Product</a></li>
 					</ul>
 				</div>
