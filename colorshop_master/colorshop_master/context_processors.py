@@ -14,14 +14,14 @@ def global_categorie(request):
         "categorie": categorie,
     }   
 
-def global_article(request):
+def global_article_single(request):
     single = Articles.objects.all()
     return {
-        "categorie": single,
+        "single": single,
     }   
     
 def global_reseau_social(request):
     reseaux = ReseauSocial.objects.all()
     return {
-        "categorie": reseaux,
+        "reseaux": reseaux,
     }   
