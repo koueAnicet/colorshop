@@ -3,9 +3,9 @@ from Shop.models import *
 
 def global_Site_info(request):
 
-   # site = Site.objects.first()
+    site = Site.objects.first()
     return {
-    #    "site_info": site,
+       "site": site,
     }   
 
 def global_categorie(request):
@@ -25,3 +25,8 @@ def global_reseau_social(request):
     return {
         "reseaux": reseaux,
     }   
+def global_article(request):
+    articles = Articles.objects.all()
+    return{
+        "articles": articles,
+    }

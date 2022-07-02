@@ -35,15 +35,7 @@ class Couleur(models.Model):
         return self.nom_couleur
 
 
-class CategorieImages(models.Model):
-    cat_image1 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image1")
-    cat_image2 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image2")
-    cat_image3 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image3")
-    cat_image4 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image4")
-    cat_image5 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image5")
-    cat_image6 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image6")
-    def __str__(self):
-        return str(self.cat_image1)
+
 
 
 class Articles(models.Model):
@@ -81,10 +73,10 @@ class Articles(models.Model):
         (TRES_GRAND,'tres_grand'),
     ]  
     image = models.FileField()
-    autre_image_article = models.ForeignKey(CategorieImages, on_delete=models.CASCADE,  related_name="articles_images")
+    
     nom = models.CharField(max_length=100)
     description = models.TextField()
-    prix = models.IntegerField()
+    prix = models.DecimalField(max_digits=5, decimal_places=2)
     promotion = models.BooleanField(default=False)
     reduction = models.BooleanField(default=False)
     valeur_reduction = models.ForeignKey(Reduction,on_delete=models.CASCADE,default=None, blank=True, null=True)
@@ -104,3 +96,13 @@ class Articles(models.Model):
         return self.nom
 
  
+class AutresImagesArticles(models.Model):
+    article = models.ForeignKey(Articles, on_delete=models.CASCADE, related_name="nom_article")
+    cat_image1 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image1")
+    cat_image2 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image2")
+    cat_image3 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image3")
+    cat_image4 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image4")
+    cat_image5 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image5")
+    cat_image6 = models.FileField(default=None, blank=True, null=True,upload_to="cat_image6")
+    def __str__(self):
+        return str(self.article)
